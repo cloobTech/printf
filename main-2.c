@@ -19,7 +19,7 @@ int main(void)
 
 int x;
 
-x = _prntnum(8878906);
+x = _prntnum(12345678);
 _putchar('\n');
 _putchar(x + '0');
 _putchar('\n');
