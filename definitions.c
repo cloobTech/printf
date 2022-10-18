@@ -25,6 +25,9 @@ int prntstr(va_list pams)
 	char *s = va_arg(pams, char *);
 	int i;
 
+	if (s == NULL)
+	s = "(null)";
+
 	i = 0;
 	while (s[i])
 	{
