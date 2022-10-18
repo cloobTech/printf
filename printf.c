@@ -22,18 +22,27 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			func = sel_func(format[i + 1]);
-		if (func != NULL)
+			if (format[i + 1] == ' ')
+				func = sel_func(format[i + 2]);
+			if (format [i + 1] != ' ')
+		func = sel_func(format[i + 1]);
+
+		if (func != NULL )
 		{
 		k += func(pams);
-		i += 2;
+
 		}
-		if (func == NULL)
+		if (func == NULL )
 		{
+		k += _putchar2(format[i]);
 		k += _putchar2(format[i + 1]);
-		i += 2;
+
 		}
-		}
+		if( format[i + 1] == ' ')
+			i += 3;
+		else
+			i += 2;
+	}
 		k += _putchar2(format[i]);
 		i++;
 	}
