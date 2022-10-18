@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
 		if (func == NULL )
 		{
 		k += _putchar2(format[i]);
+		if (format[i + 1] != '%')
 		k += _putchar2(format[i + 1]);
 
 		}
