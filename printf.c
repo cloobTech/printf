@@ -1,46 +1,40 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stddef.h>
+/**
+ * _printf- prints anything in C!
+ *@format: format of the things to be printed
+ * Return: number of characters printed.
+ */
 
 
 int _printf(const char *format, ...)
 {
 	int i, k;
 	va_list pams;
-	char *string;
+	int (*func)(va_list);
 
 	va_start(pams, format);
 
 	i = 0;
 	k = 0;
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					k += _putchar(va_arg(pams, int));
-					i += 2;
-					break;
-				case 's':
-					string = va_arg(pams, char *);
-					(string == NULL && (string = "(null)"));
-					k += _prntstr(string);
-					i += 2;
-					break;
-				case '%':
-					k += _putchar(format[i + 1]);
-					i += 2;
-					break;
-				default:
-					k += _putchar(format[i]);
-					k += _putchar(format[i + 1]);
-					i += 2;
-
-
-			}
+			func = sel_func(format[i + 1]);
+		if (func != NULL)
+		{
+		k += func(pams);
+		i += 2;
 		}
-		k += _putchar(format[i]);
+		if (func == NULL)
+		{
+		k += _putchar2(format[i + 1]);
+		i += 2;
+		}
+		}
+		k += _putchar2(format[i]);
 		i++;
 	}
 	va_end(pams);
