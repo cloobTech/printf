@@ -14,16 +14,17 @@ int (*sel_func(char c))(va_list pams)
 
 	fa k[] = { {'s', prntstr}, {'c', _putchar},
 		{'b', prntbnry}, {'d', _prntnum},
-		{'o', prntoct}, {'i', _prntnum}
+		{'o', prntoct}, {'i', _prntnum},
+		{'\0', NULL}
 	};
 	i = 0;
-	while (i < 6)
+	while (k[i].t != '\0')
 	{
 		if (k[i].t == c)
 			return (k[i].fp);
 		i++;
 	}
-	return (NULL);
+	return (k[i].fp);
 }
 
 /**

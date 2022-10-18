@@ -39,11 +39,15 @@ int _printf(const char *format, ...)
 		k += _putchar2(format[i + 1]);
 
 		}
-		if( format[i + 1] == ' ')
+		if(format[i + 1] == ' ')
+		{	_putchar2(format[i + 1]);
 			i += 3;
+		}
 		else
 			i += 2;
 	}
+		if (func && format[i] == '%')
+			continue;
 		k += _putchar2(format[i]);
 		i++;
 	}

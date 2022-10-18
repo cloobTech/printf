@@ -19,9 +19,9 @@ k1 =	_printf("Length:[%d, %i]\n", len, len);
   k3 =  _printf("Negative:[%d]\n", -762534);
    k4 = printf("Negative:[%d]\n", -762534);
 
-_printf("%d %d %d %d\n", k1, k2, k3, k4);
+_printf("%d % d% d% d\n", k1, k2, k3, k4);
 
-printf("%d %d %d %d\n", k1, k2, k3, k4);
+printf("%d % d%   d% d\n", k1, k2, k3, k4);
 
    _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
