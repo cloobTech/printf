@@ -29,7 +29,7 @@ int prntstr(va_list pams)
 	s = "(null)";
 
 	i = 0;
-	while (s[i])
+	while (s[i] && i <= 509)
 	{
 		write(1, &s[i], 1);
 		i++;
