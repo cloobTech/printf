@@ -17,31 +17,26 @@ int _printf(const char *format, ...)
 	if (format == NULL || (*(format) == '%' && *(format + 1) == '\0'))
 		return (-1);
 	va_start(pams, format);
-
 	i = 0;
 	k = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
-		{
-			func = sel_func(format[i + 1]);
+		{		func = sel_func(format[i + 1]);
 			if (func != NULL)
-			{
-				k += func(pams);
+			{	k += func(pams);
 				i += 2;
 				continue;
 			}
 			else
 			{
 				if (format[i + 1] == '%')
-				{
-					k += _putchar2(format[i + 1]);
+				{	k += _putchar2(format[i + 1]);
 					i += 2;
 					continue;
 				}
 				else
-				{
-					k += _putchar2(format[i]);
+				{	k += _putchar2(format[i]);
 					k += _putchar2(format[i + 1]);
 					i += 2;
 					continue;
