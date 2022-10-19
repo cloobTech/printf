@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	va_list pams;
 	int (*func)(va_list);
 
+	if (format == NULL || (*(format) == '%' && *(format + 1) == '\0'))
+		return (-1);
 	va_start(pams, format);
 
 	i = 0;
