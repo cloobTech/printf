@@ -81,19 +81,9 @@ int prntoct1(int a)
 {
 	unsigned int k;
 
-	if (a < 0)
-	{
-	_putchar2('-');
-	k = (a * -1);
-	}
-	else
-	{
-		k = a;
-	}
+	k = a;
 	if (k > 7)
 	prntoct1(k / 8);
 	_putchar2(k % 8 + '0');
-	if (a >= 0)
 	return (countoct(k));
-return (countoct(k) + 1);
 }

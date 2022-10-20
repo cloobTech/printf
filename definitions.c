@@ -50,15 +50,29 @@ int _putchar2(char c)
 }
 
 /**
- * prntoct - prints a number from va_list in octal
- *@pams: the va_list containing the number:
- * Return: the number of digits printed.
+ * 
+ *
  */
 
-int prntoct(va_list pams)
+int prnt_unsigned(va_list pams)
 {
 	int a = va_arg(pams, int);
 
-	return (prntoct1(a));
+	return (prnt_unsigned1(a));
 }
 
+/**
+ * prnt_unsigned1 - prints a number in binary
+ *@a: the number to be printed.
+ * Return: the number of digits printed.
+ */
+
+int prnt_unsigned1(int a)
+{
+	unsigned int k;
+	k = a;
+	if (k > 9)
+	prnt_unsigned1(k / 10);
+	_putchar2(k % 10 + '0');
+	return (count_digits(k));
+}

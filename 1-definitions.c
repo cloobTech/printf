@@ -12,11 +12,16 @@ int (*sel_func(char c))(va_list pams)
 
 	int i;
 
-	fa k[] = { {'s', prntstr}, {'c', _putchar},
+	fa k[] =
+	{
+		{'s', prntstr}, {'c', _putchar},
 		{'b', prntbnry}, {'d', _prntnum},
 		{'o', prntoct}, {'i', _prntnum},
+		{'u', prnt_unsigned}, {'x', hex},
+		{'X', hex0},
 		{'\0', NULL}
 	};
+
 	i = 0;
 	while (k[i].t != '\0')
 	{
@@ -67,3 +72,19 @@ int countbnry(unsigned int n)
 	return (1 + countbnry(n / 2));
 	return (1);
 }
+
+
+/**
+ * prntoct - prints a number from va_list in octal
+ *@pams: the va_list containing the number:
+ * Return: the number of digits printed.
+ */
+
+int prntoct(va_list pams)
+{
+	int a = va_arg(pams, int);
+
+	return (prntoct1(a));
+}
+
+

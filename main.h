@@ -14,6 +14,13 @@ int countoct(unsigned int n);
 int _prntnum1(int n);
 int prntbnry1(int a);
 int prntoct1(int a);
+int prnt_unsigned1(int a);
+int prnt_unsigned(va_list pams);
+int count_hex(unsigned int n);
+int hex0(va_list pams);
+int hex(va_list pams);
+int hex1(int n);
+int hex2(int n);
 
 /**
  * struct func_array - array of functions and specifier symbols
