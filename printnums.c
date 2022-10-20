@@ -63,22 +63,13 @@ int prntbnry1(int a)
 {
 	unsigned int k;
 
-	if (a < 0)
-	{
-	_putchar2('-');
-	k = (a * -1);
-	}
-	else
-	{
-		k = a;
-	}
+	k = a;
 	if (k > 1)
 	prntbnry1(k / 2);
 	_putchar2(k % 2 + '0');
-	if (a >= 0)
 	return (countbnry(k));
-return (countbnry(k) + 1);
 }
+
 
 /**
  * prntoct1 - prints a number in octal
@@ -100,7 +91,7 @@ int prntoct1(int a)
 		k = a;
 	}
 	if (k > 7)
-	prntbnry1(k / 8);
+	prntoct1(k / 8);
 	_putchar2(k % 8 + '0');
 	if (a >= 0)
 	return (countoct(k));
