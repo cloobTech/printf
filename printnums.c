@@ -5,13 +5,13 @@
  * Return: the number of digits printed
  */
 
-
 int _prntnum(va_list pams)
 {
 	int n = va_arg(pams, int);
 
 	return (_prntnum1(n));
 }
+
 
 /**
  * _prntnum1 - prints an integer in base 10
