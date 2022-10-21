@@ -1,4 +1,11 @@
 #include "main.h"
+/**
+ * hex0 - prints number in uppercase hexamdecimal from va_list
+ *@pams: the va_list from which the number is extracted.
+ * Return: number of digits printed.
+ */
+
+
 
 int hex0(va_list pams)
 {
@@ -8,6 +15,11 @@ int hex0(va_list pams)
 
 }
 
+/**
+ * hex - prints number in lowercase hexamdecimal from va_list
+ *@pams: the va_list from which the number is extracted.
+ * Return: number of digits printed.
+ */
 
 int hex(va_list pams)
 {
