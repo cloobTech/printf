@@ -30,10 +30,15 @@ int hex(va_list pams)
 }
 
 
+/**
+ * hex1 - prints number in lowercase hexamdecimal from a base 10 int.
+ *@a: the base 10 integer.
+ * Return: number of digits printed.
+ */
 int hex1(int a)
 {
 	unsigned int k;
-	char arr[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+	char arr[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 	k = a;
 	if (k > 15)
@@ -42,11 +47,16 @@ int hex1(int a)
 	return (count_hex(k));
 }
 
+/**
+ * hex2 - prints number in UPPERcase hexamdecimal from a base 10 int.
+ *@a: the base 10 integer.
+ * Return: number of digits printed.
+ */
 
 int hex2(int a)
 {
 	unsigned int k;
-	char arr[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+	char arr[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
 	k = a;
 	if (k > 15)

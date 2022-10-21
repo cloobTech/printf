@@ -50,7 +50,7 @@ int _putchar2(char c)
 }
 
 /**
- * 
+ *
  *
  */
 
